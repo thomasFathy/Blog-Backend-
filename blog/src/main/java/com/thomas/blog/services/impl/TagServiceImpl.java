@@ -63,4 +63,11 @@ public class TagServiceImpl implements TagService {
             });
 
     }
+
+    @Override
+    public Tag getTagById(UUID tagId) {
+        return tagRepository.findById(tagId).orElseThrow(()-> new RuntimeException("No tag found with this id"));
+    }
+
+
 }
